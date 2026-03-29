@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.ferreteriatuerka.controller.VentaController"
+      stylesheets="@Styles/login.css">
+
+    <GridPane styleClass="content" hgap="12" vgap="10" alignment="CENTER">
+
+        <HBox spacing="10" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="4" alignment="CENTER">
+            <Button text="Cargar Ventas" onAction="#cargarVentas"/>
+            <Button text="Guardar Venta" onAction="#guardarVenta"/>
+            <Button text="Actualizar Venta" onAction="#actualizarVenta"/>
+            <Button text="Eliminar Venta" onAction="#eliminarVenta"/>
+            <Button text="Volver" onAction="#VolverMenu"/>
+        </HBox>
+
+        <Label text="Fecha y hora (YYYY-MM-DDTHH:MM:SS)" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtFecha" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+        <Label text="Email Comprador" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtEmailComprador" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+        <Label text="ProductoId" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtProductoId" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Nombre Producto" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtNombreProducto" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+
+        <Label text="Cantidad" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCantidad" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Precio Unitario" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtPrecioUnitario" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+
+        <Label text="Total" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtTotal" GridPane.rowIndex="5" GridPane.columnIndex="1" disable="true"/>
+
+
+        <TableView fx:id="tblVentas"
+                   prefHeight="320" prefWidth="820"
+                   GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.columnSpan="4">
+
+            <columns>
+                <TableColumn fx:id="colVentaId" text="ID" prefWidth="70"/>
+                <TableColumn fx:id="colFecha" text="Fecha" prefWidth="180"/>
+                <TableColumn fx:id="colEmailComprador" text="Email" prefWidth="210"/>
+                <TableColumn fx:id="colProductoId" text="ProdId" prefWidth="80"/>
+                <TableColumn fx:id="colNombreProducto" text="Producto" prefWidth="160"/>
+                <TableColumn fx:id="colCantidad" text="Cant" prefWidth="70"/>
+                <TableColumn fx:id="colPrecioUnitario" text="PrecioU" prefWidth="90"/>
+                <TableColumn fx:id="colTotal" text="Total" prefWidth="90"/>
+            </columns>
+
+        </TableView>
+
+    </GridPane>
+</VBox>
